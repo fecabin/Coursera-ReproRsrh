@@ -18,7 +18,7 @@ data=read.csv("activity.csv")
 
 
 ##  2  What is mean total number of steps taken per day
-````{r ,echo=TRUE }
+````{r ,echo=TRUE ,fig.width=12}
 #Get the sum of steps taken for each date and turn the reusslt to dataframe
 sum.numofStepsPerDay <- tapply(data$step, data$date, sum,na.rm=TRUE)
 sum.df=data.frame(date=names(sum.numofStepsPerDay),sumStepsPerDay=sum.numofStepsPerDay)
@@ -83,7 +83,7 @@ sum(is.na(data2$steps))
 sum(is.na(data2$steps))
 ```
 ### 4.4 Make a histogram of the total number of steps taken each day (Without NAs!!)
-````{r fig.width=12}
+````{r echo=TRUE,fig.width=12}
 #Caculate the total number of steps taken for each Date (using data2)
 sum2.numofStepsPerDay <- tapply(data2$step, data$date, sum)
 sum2.df=data.frame(date=names(sum2.numofStepsPerDay),sumStepsPerDay=sum2.numofStepsPerDay)
