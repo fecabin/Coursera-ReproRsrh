@@ -64,6 +64,11 @@ ggplot(avg.df, aes(x = interval, y = avgSteps)) + geom_line()
 ```r
 # Find the interval with max avgSteps taken
 maxAvgStepsPerInterval = avg.df[which.max(avg.df$avgSteps), ]$interval
+print(maxAvgStepsPerInterval)
+```
+
+```
+## [1] 835
 ```
 
 ### [ Answer ] : The interval with max value of steps accross all days : 835 
