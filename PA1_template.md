@@ -64,11 +64,6 @@ ggplot(avg.df, aes(x = interval, y = avgSteps)) + geom_line()
 ```r
 # Find the interval with max avgSteps taken
 maxAvgStepsPerInterval = avg.df[which.max(avg.df$avgSteps), ]$interval
-print(maxAvgStepsPerInterval)
-```
-
-```
-## [1] 835
 ```
 
 ### [ Answer ] : The interval with max value of steps accross all days : 835 
@@ -84,7 +79,7 @@ print(maxAvgStepsPerInterval)
 numOfNa = sum(is.na(data$steps))
 ```
 
-#### Report of the total number of rows with NAs : 2304
+### [ Answer ] : The total number of rows with NAs : 2304
 
 ## 4.2 Derive a Strategy to fill the NAs
 ### [ Answer ] : The strategy : Fill the NAs with average steps for that interval
@@ -100,15 +95,11 @@ for (i in 1:nrow(data2)) {
         data2[i, ]$steps <- avg.df[avg.df$interval == tarInterval, ]$avgSteps
     }
 }
-# Verify if the data2 is without NA
-sum(is.na(data2$steps))
-```
-
-```
-## [1] 0
 ```
 
 ### 4.3 Create a new dataset that is equal to the original dataset but with the missing data filled in
+  
+  - The variable data2 is the new data without NAs check as follows:
 
 ```r
 # Verify if the data2 is without NA
